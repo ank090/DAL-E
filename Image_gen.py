@@ -13,13 +13,15 @@ parser.add_argument("-s", "--size", help = "Size of image", default = 256)
 #Reading arguments from command line 
 args = parser.parse_args()
 
+#Creating a response
 res = openai.Image.create(
     prompt = args.prompt,
     n = int(args.number),
     size=f"{args.size}x{args.size}",
-    response_format = "b64_json"
+    response_format = "b64_json" # b64_json is a string representation of image
 )
 
+#Iterating over the response and genrating image and saving iamge locally
 for i in range(len(res['data'])):
     b64_blob = res['data'][i]['b64_json']
     print("Genrating Image...")
