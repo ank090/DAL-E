@@ -15,7 +15,7 @@ args = parser.parse_args()
 
 #Creating a response
 res = openai.Image.create(
-    prompt = args.prompt,
+    prompt = args.prompt, #promt for genrated images  -- "spider hulk in ironman suit, high detail"
     n = int(args.number),
     size=f"{args.size}x{args.size}",
     response_format = "b64_json" # b64_json is a string representation of image
