@@ -4,7 +4,7 @@ import base64
 import argparse
 openai.api_key = os.getenv("OPEN_AI_API_KEY")
 
-#initiate parsing
+#initiate parsing (Used for taking parameter for image generation from command line)
 parser = argparse.ArgumentParser()
 parser.add_argument("-p", "--prompt", help = "Insert Text to genrate image.", default= "baby panda with gun in high detail")
 parser.add_argument("-n", "--number", help = "Enter number of images required", default = 2)
